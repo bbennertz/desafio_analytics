@@ -1,0 +1,18 @@
+version: 2
+
+sources: 
+- name: analytics
+  schema: production
+  description: This is the adventures works production postgres database replica
+  tables:
+    - name: raw_billofmaterials
+    - name: raw_location
+    - name: raw_product
+    - name: raw_productcategory
+    - name: raw_productinventory
+    - name: raw_productsubcategory
+    - name: raw_scrapreason
+    - name: raw_transactionhistory
+    - name: raw_transactionhistoryarchive
+    - name: raw_workorder
+    - name: raw_workorderrouting
