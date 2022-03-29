@@ -3,7 +3,7 @@ version: 2
 sources: 
 - name: analytics
   schema: production
-  description: This is the adventures works production postgres database replica
+  description: This is the adventures works production postgres database replica.
   tables:
     - name: raw_billofmaterials
     - name: raw_location
