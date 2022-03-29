@@ -1,5 +1,10 @@
 with 
     source as (
+        select *
+        from {{ source('analytics', 'raw_workorder') }}
+    )
+    
+    , transformed as (
         select
             "workorderid" as id_ordem_servico
             , "productid" as id_produto
@@ -10,7 +15,7 @@ with
             , "duedate" as data_vencimento
             , coalesce(scrapreasonid, 0) as id_razão_sucateado
             , "modifieddate" as data_modificação
-        from {{ source('analytics', 'raw_workorder') }}
+        from source
     )
 
-select * from source
+select * from transformed
