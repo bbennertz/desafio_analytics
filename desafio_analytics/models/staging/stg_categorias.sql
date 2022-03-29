@@ -1,5 +1,10 @@
 with 
     source as (
+        select *
+        from {{source('analytics','raw_productcategory')}}
+    )
+    
+    , transformed as (
         select
             "productcategoryid" as id_categoria_produto
             , "name" as nome
@@ -8,4 +13,4 @@ with
         from {{source('analytics','raw_productcategory')}}
     )
 
-select * from source
+select * from transformed

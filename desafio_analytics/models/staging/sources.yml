@@ -6,7 +6,7 @@ sources:
   description: This is the adventures works production postgres database replica.
   tables:
     - name: raw_billofmaterials 
-      description: Items required to make bicycles and bicycle subassemblies.
+      description: This table contains items required to make bicycles and bicycle subassemblies.
     - name: raw_location
     - name: raw_product
     - name: raw_productcategory
