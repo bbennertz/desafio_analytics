@@ -1,5 +1,5 @@
 with
-    source as(
+    source as (
         select 
             scrapreasonid as id_razãosucateamento
             , name as motivo_sucateamento

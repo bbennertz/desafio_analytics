@@ -1,5 +1,5 @@
 with
-    source as(
+    source as (
         select 
             locationid as id_localização
             , productid as id_produto
