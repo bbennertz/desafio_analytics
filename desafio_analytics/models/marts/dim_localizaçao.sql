@@ -1,12 +1,14 @@
 with
     staging as (
         select *
-        from{{ref('stg_location')}}
+        from{{ ref('stg_location') }}
     )
 
     , transformed as (
         select
-            {{ dbt_utils.surrogate_key(id_localização, data_modificação) }} as sk_localização
+            {{ 
+                dbt_utils.surrogate_key(['id_localização', 'data_modificação']) 
+            }} as sk_localização
             , id_localização
             , custo_hora
             , nome_local
