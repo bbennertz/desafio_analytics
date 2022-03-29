@@ -1,9 +1,5 @@
 with 
     source as (
-        select *
-        from {{ source('analytics', 'raw_product') }}
-    )
-    ,transformed as (
         select 
             "productid" as id_produto
             , "name" as nome
@@ -49,7 +45,8 @@ with
             , "discontinueddate" as data_descontinuado
             , "rowguid" as guia_linha
             , "modifieddate" as data_modificação
-        from source
+        from {{source('analytics', 'raw_product')}}
     )
-select * 
-from transformed
+
+
+select * from source

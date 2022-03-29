@@ -1,7 +1,7 @@
 with
     staging as (
         select *
-        from {{ ref('stg_location') }}
+        from{{ ref('stg_location') }}
     )
 
     , transformed as (
@@ -17,5 +17,4 @@ with
         from staging
     )
 
-select * 
-from transformed
+select * from transformed

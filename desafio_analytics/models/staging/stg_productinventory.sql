@@ -1,9 +1,5 @@
 with
     source as(
-        select *
-        from {{ source('analytics','raw_productinventory') }}
-    )
-    , transformed as ( 
         select 
             locationid as id_localização
             , productid as id_produto
@@ -12,7 +8,7 @@ with
             , quantity as quantidade_no_inventário
             , rowguid as guia_linha
             , modifieddate as data_modificação
-        from source
+        from {{source('analytics','raw_productinventory')}}
     )
-select * 
-from transformed
+
+select * from source
