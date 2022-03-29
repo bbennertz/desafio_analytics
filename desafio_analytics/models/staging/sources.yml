@@ -5,7 +5,8 @@ sources:
   schema: production
   description: This is the adventures works production postgres database replica.
   tables:
-    - name: raw_billofmaterials
+    - name: raw_billofmaterials 
+      description: Items required to make bicycles and bicycle subassemblies.
     - name: raw_location
     - name: raw_product
     - name: raw_productcategory
@@ -16,3 +17,5 @@ sources:
     - name: raw_transactionhistoryarchive
     - name: raw_workorder
     - name: raw_workorderrouting
+      description: Work order details.
+
