@@ -20,7 +20,7 @@ with
             dbt_utils.surrogate_key(['id_ordem_servico', 'data_modificacao'])
         }} as sk_ordens_servicos
         , p.sk_produtos as fk_produtos
-        , s.sk_sucateados as fk_sucateados
+        , s.sk_sucateados as sk_sucateamento
         , o.quantidade_ordem
         , o.quantidade_sucateado
         , o.id_razão_sucateado
