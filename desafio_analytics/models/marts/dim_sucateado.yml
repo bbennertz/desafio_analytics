@@ -1,0 +1,19 @@
+version: 2
+models:
+  - name: dim_sucateado
+    description: "Esta é a tabela de dimensão sobre o sucateamento."
+    columns:
+      - name: sk_sucateamento
+        description: "A chave surrogate da dim_sucateado deve ser única"
+        tests: 
+          - unique
+          - not_null
+      - name: motivo_sucateamento
+        description: "detalha o porque que o objeto virou sucata"
+      - name: id_sucateamento
+        description: "id do objeto sucateado"
+        tests:
+          - unique
+          - not_null
+
+      

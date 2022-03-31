@@ -1,10 +1,13 @@
 with
-    source as (
-        select 
-            scrapreasonid as id_razaosucateamento
-            , name as motivo_sucateamento
-            , modifieddate as data_modificacao
+    source as(
+        select *
         from {{source('analytics','raw_scrapreason')}}
     )
-
-select * from source
+    , transformed as(
+        select 
+            scrapreasonid as id_sucateamento
+            , name as motivo_sucateamento
+            , cast(modifieddate as date) as data_modificacao
+        from source
+    )
+select * from transformed
