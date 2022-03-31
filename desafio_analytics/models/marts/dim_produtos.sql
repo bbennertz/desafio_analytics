@@ -61,15 +61,6 @@ with
     left join join_sub_categoria c
     on p.id_subcategoria_produto = c.id_subcategoria_produto
     )
-    , transformacao_produto_sk as (
-        select
-            {{ 
-                dbt_utils.surrogate_key(['id_produto']) 
-            }} as sk_produto
-            , *
-        from join_final
-    )
 
 select * 
-from transformacao_produto_sk
--- select * from join_final
+from join_final

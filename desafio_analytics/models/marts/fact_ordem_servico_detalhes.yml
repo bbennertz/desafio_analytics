@@ -1,21 +1,24 @@
 version: 2
 
 models:
-  - name: 'fact_fabricacao_detalhes'
+  - name: 'fact_ordem_servico_detalhes'
     description: "Tabela de métricas a nível de workorder, produtos e localizacao."
     columns:
       - name: 'sk_ordem_servico'
         description: "Chave estrangeira referente a ordem de servico. Origem: fact."
         tests:
           - not_null
+          - unique 
       - name: 'sk_produto'
         description: "Chave estrangeira referente ao produto. Origem: dim_produto."
         tests:
           - not_null
+          - unique
       - name: 'sk_localização'
         description: "Chave estrangeira referente a localização. Origem: dim_localizacao."
         tests:
           - not_null
+          - unique
       - name: 'sequencia_operacao'
         description: "Sequencia do processo de fabricacao"
       - name: 'horas_fabricacao'

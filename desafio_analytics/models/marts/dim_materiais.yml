@@ -4,8 +4,21 @@ models:
   - name: 'dim_materiais'
     description: "Tabela de dimensão dos materiais a nível de produtos."
     columns:
-      - name: sk_montagem
-        descriprion: "A chave surrogate da dim_materiais representa a identificação do produto pai e a identificação do componente. Ela deve ser única e não nula"
+      - name: sk_material
+        descriprion: "A chave surrogate da dim_materiais representa a identificação do produto pai . Ela deve ser única e não nula"
+        tests:
+          - not_null
+          - unique 
+      - name: sk_produto_pai
+        descriprion: "A chave surrogate da dim_materiais representa a identificação do produto pai. Ela deve ser única e não nula"
+        tests:
+          - not_null
+          - unique 
+      - name: sk_componente
+        descriprion: "A chave surrogate da dim_materiais representa a identificação do componente. Ela deve ser única e não nula"
+        tests:
+          - not_null
+          - unique 
       - name: id_material
         description: "Chave Primária. Registro da lista de materiais."
       - name: bomlevel
