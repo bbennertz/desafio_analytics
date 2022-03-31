@@ -11,7 +11,6 @@ with
             , id_localizacao
             , nome_local
             , capacidade_manufatura
-            , data_modificacao
         from staging
     )
 select * from transformed 
