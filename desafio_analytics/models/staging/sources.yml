@@ -17,6 +17,7 @@ sources:
       description: Fonte das informações sobre as subcategorias dos produtos.
     - name: raw_scrapreason
     - name: raw_transactionhistory
+      description: Record of each purchase order, sales order, or work order transaction year to date.
     - name: raw_transactionhistoryarchive
     - name: raw_workorder
       description: Fonte das informações sobre o processo de pedido para manufatura de produtos.
