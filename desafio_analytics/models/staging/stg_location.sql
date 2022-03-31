@@ -1,11 +1,16 @@
 with
     source as(
         select 
-        locationid as id_localização
-        , costrate as custo_hora
-        , name as nome_local
-        , availability as capacidade_manufatura
-        , modifieddate as data_modificação
+            *
         from {{source('analytics','raw_location')}}
     )
-    select * from source
+    , transformed as (
+        SELECT
+            locationid as id_localizacao
+            , costrate as custo_hora
+            , name as nome_local
+            , availability as capacidade_manufatura
+            , cast(modifieddate as date) as data_modificacao
+        from source
+    )
+    select * from transformed

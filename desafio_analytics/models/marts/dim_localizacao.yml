@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: dim_localizacao
+    description: "Esta é a tabela de dimensão localização."
+    columns:
+      - name: sk_localizacao
+        description: "A chave surrogate da dim_localizacao deve ser única e sem números"
+        tests: 
+          - unique
+          - not_null
+      - name: id_localizacao
+        description: "id do armazém"
+        tests:
+          - unique
+          - not_null
+      - name: nome_local
+        description: "nome do local"
+      - name: custo_hora
+        description: "custo por hora padrão do local de fabricação"
+      - name: capacidade_manufatura
+        description: "Capacidade de trabalho (em horas) do local de fabricação."
+
+      
