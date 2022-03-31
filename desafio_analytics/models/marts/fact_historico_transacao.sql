@@ -1,7 +1,7 @@
 with
     source as (
         select *
-        from {{ ref('stg_transactionhistory') }}
+        from {{ ref('stg_historico_transacao') }}
     ) 
     , fact_historico_transacao as (
         select 
@@ -17,7 +17,7 @@ with
     , fact_historico_transacao_with_sk as (
         select
             {{ 
-                dbt_utils.surrogate_key(['id_transacao']) 
+                dbt_utils.surrogate_key(['id_transacao', 'data_modificacao']) 
             }} as sk_historico_transacao  
             , dim_produtos.sk_produto
             , fact_historico_transacao.id_transacao 

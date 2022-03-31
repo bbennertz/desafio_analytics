@@ -5,7 +5,7 @@ with
     data as (
         select 
 	        sum(custo_real) as custo_real
-        from {{ ref('fact_fabricacao_detalhes') }}
+        from {{ ref('fact_ordem_servico_detalhes') }}
         where 
 	        sequencia_operacao = '1'
 	        and data_planejada_inicio_fabricacao between '2011-06-01' and '2011-06-30'

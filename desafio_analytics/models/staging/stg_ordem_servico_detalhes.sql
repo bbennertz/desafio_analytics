@@ -16,6 +16,7 @@ with
             , cast(scheduledenddate as date) as data_planejada_fim_fabricacao
             , cast(actualstartdate as date) as data_inicio_real
             , cast(actualenddate as date) as data_fim_real
+            , cast(modifieddate as date) as data_modificacao
         from source
     )
 select *
