@@ -14,6 +14,7 @@ sources:
     - name: raw_productsubcategory
     - name: raw_scrapreason
     - name: raw_transactionhistory
+      description: Record of each purchase order, sales order, or work order transaction year to date.
     - name: raw_transactionhistoryarchive
     - name: raw_workorder
     - name: raw_workorderrouting
