@@ -7,9 +7,9 @@ with
     , transformed as (
         select
             {{ 
-                dbt_utils.surrogate_key(['id_localização', 'data_modificação']) 
-            }} as sk_localização
-            , id_localização
+                dbt_utils.surrogate_key(['id_localizacao', 'data_modificacao']) 
+            }} as sk_localizacao
+            , id_localizacao
             , custo_hora
             , nome_local
             , capacidade_manufatura

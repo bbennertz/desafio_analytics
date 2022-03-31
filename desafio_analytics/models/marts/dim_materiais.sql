@@ -1,7 +1,7 @@
 with
     stg_materiais as (
         select *
-        from {{ ref('stg_billofmaterials') }}
+        from {{ ref('stg_materiais') }}
     )
     , stg_materiais_with_sk as (
         select 
@@ -19,17 +19,17 @@ with
     )   
     , transformed as (
         select
-            sk_material
-            , sk_produto_pai
-            , sk_componente
-            , id_material
-            , id_produto_pai
-            , id_componente
-            , bomlevel
-            , qtd_por_pontagem
-            , data_inicio
-            , data_fim
-            , data_modificacao
+            stg_materiais_with_sk.sk_material
+            , stg_materiais_with_sk.sk_produto_pai
+            , stg_materiais_with_sk.sk_componente
+            , stg_materiais_with_sk.id_material
+            , stg_materiais_with_sk.id_produto_pai
+            , stg_materiais_with_sk.id_componente
+            , stg_materiais_with_sk.bomlevel
+            , stg_materiais_with_sk.qtd_por_pontagem
+            , stg_materiais_with_sk.data_inicio
+            , stg_materiais_with_sk.data_fim
+            , stg_materiais_with_sk.data_modificacao
         from stg_materiais_with_sk
         left join {{ ref('dim_produtos')}} 
             on stg_materiais_with_sk.sk_produto_pai = dim_produtos.sk_produtos

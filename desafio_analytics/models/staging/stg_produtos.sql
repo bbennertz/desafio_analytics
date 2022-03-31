@@ -45,13 +45,14 @@ with
             end as estilo
             , "productsubcategoryid" as id_subcategoria_produto
             , "productmodelid" as id_modelo_produto
-            , "sellstartdate" as data_inicio_venda
+            , cast(sellstartdate as date) as data_inicio_venda
             , "sellenddate" as data_fim_venda
-            , "discontinueddate" as data_descontinuado
+            , cast(discontinueddate as date) as data_descontinuado
             , "rowguid" as guia_linha
-            , "modifieddate" as data_modificacao
+            , cast(modifieddate as date) as data_modificacao
         from source
     )
 
 
-select * from transformed
+select * 
+from transformed

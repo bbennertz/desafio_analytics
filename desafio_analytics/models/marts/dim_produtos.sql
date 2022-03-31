@@ -20,7 +20,7 @@ with
             , sc.id_categoria_produto
             , c.nome as categoria
             , sc.nome as sub_categoria
-            , sc.data_modificação
+            , sc.data_modificacao
         from staging_subcategoria sc
         left join staging_categorias c
         on sc.id_categoria_produto = c.id_categoria_produto
@@ -30,7 +30,7 @@ with
     , join_final as (
         select 
         {{ 
-            dbt_utils.surrogate_key(['id_produto', 'p.data_modificacao']) 
+            dbt_utils.surrogate_key(['id_produto', 'c.data_modificacao']) 
         }} as sk_produtos
         , p.id_produto
         , p.nome
@@ -52,7 +52,6 @@ with
         , p.estilo
         , c.categoria
         , c.sub_categoria
-        , p.modelo_produto
         , p.data_inicio_venda
         , p.data_fim_venda
         , p.data_descontinuado

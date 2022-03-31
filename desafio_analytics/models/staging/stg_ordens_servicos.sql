@@ -3,19 +3,19 @@ with
         select *
         from {{ source('analytics', 'raw_workorder') }}
     )
-    
     , transformed as (
         select
             "workorderid" as id_ordem_servico
             , "productid" as id_produto
             , "orderqty" as quantidade_ordem
             , "scrappedqty" as quantidade_sucateado
-            , "startdate" as data_inicio
-            , "enddate" as data_fim
-            , "duedate" as data_vencimento
-            , coalesce(scrapreasonid, 'não sucateado') as id_razão_sucateado
-            , "modifieddate" as data_modificacao
+            , cast(startdate as date) as data_inicio
+            , cast(enddate as date) as data_fim
+            , cast (duedate as date) as data_vencimento
+            , scrapreasonid as id_sucateamento
+            , cast(modifieddate as date) as data_modificacao
         from source
     )
 
-select * from transformed
+select * 
+from transformed

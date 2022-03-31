@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: dim_localização
+  - name: dim_localizacao
     description: "Esta é a tabela de dimensão localização."
     columns:
       - name: sk_produto
@@ -8,8 +8,8 @@ models:
         tests: 
           - unique
           - not_null
-      - name: id_localização
-        description: "id da localização"
+      - name: id_localizacao
+        description: "id da localizacao"
       - name: custo_hora
         description: "custo por hora padrão do local de fabricação"
       - name: nome_local

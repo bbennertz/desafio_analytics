@@ -1,7 +1,7 @@
 with
     source as (
         select 
-            locationid as id_localização
+            locationid as id_localizacao
             , name as nome_local
             , costrate as custo_hora
             , availability as capacidade_manufatura
