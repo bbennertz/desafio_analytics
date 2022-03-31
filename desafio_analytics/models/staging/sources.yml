@@ -3,16 +3,24 @@ version: 2
 sources: 
 - name: analytics
   schema: production
-  description: This is the adventures works production postgres database replica
+  description: Esta é a réplica do banco de dados postgres da Adventureworks.
   tables:
-    - name: raw_billofmaterials
+    - name: raw_billofmaterials 
+      description: Esta tabela contém itens necessários para fazer bicicletas e subconjuntos de bicicletas.
     - name: raw_location
     - name: raw_product
+      description: Fonte das informações sobre os produtos do departamento de manufatura.
     - name: raw_productcategory
+      description: Fonte das informações sobre as categorias dos produtos.
     - name: raw_productinventory
     - name: raw_productsubcategory
+      description: Fonte das informações sobre as subcategorias dos produtos.
     - name: raw_scrapreason
     - name: raw_transactionhistory
+      description: Registro de cada ordem de compra, ordem de venda ou transação de ordem de serviço do ano até a data.
     - name: raw_transactionhistoryarchive
     - name: raw_workorder
+      description: Fonte das informações sobre o processo de pedido para manufatura de produtos.
     - name: raw_workorderrouting
+      description: Detalhes da ordem de serviço.
+
