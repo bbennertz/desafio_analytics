@@ -1,7 +1,6 @@
 with
     source as(
-        select 
-            *
+        select *
         from {{source('analytics','raw_productinventory')}}
     )
 
@@ -16,4 +15,4 @@ with
             , cast(modifieddate as date) as data_modificacao
         from source
     )
-    select * from transformed
+select * from transformed

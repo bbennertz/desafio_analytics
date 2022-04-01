@@ -1,7 +1,6 @@
 with
-    source as(
-        select 
-            *
+    source as (
+        select *
         from {{source('analytics','raw_location')}}
     )
     , transformed as (
@@ -13,4 +12,4 @@ with
             , cast(modifieddate as date) as data_modificacao
         from source
     )
-    select * from transformed
+select * from transformed

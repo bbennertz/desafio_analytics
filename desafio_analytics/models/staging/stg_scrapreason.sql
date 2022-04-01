@@ -1,8 +1,6 @@
-
 with
     source as(
-        select 
-        *
+        select *
         from {{source('analytics','raw_scrapreason')}}
     )
     , transformed as(

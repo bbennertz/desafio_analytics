@@ -3,8 +3,8 @@ models:
   - name: dim_localizacao
     description: "Esta é a tabela de dimensão localização."
     columns:
-      - name: sk_localizacao
-        description: "A chave surrogate da dim_localizacao deve ser única e sem números"
+      - name: sk_produto
+        description: "A chave surrogate da dim_localização deve ser única e não nula"
         tests: 
           - unique
           - not_null
@@ -19,5 +19,3 @@ models:
         description: "custo por hora padrão do local de fabricação"
       - name: capacidade_manufatura
         description: "Capacidade de trabalho (em horas) do local de fabricação."
-
-      
