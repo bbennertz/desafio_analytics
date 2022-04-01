@@ -23,7 +23,7 @@ with
         select
             fact_ordens_servicos.sk_ordens_servicos
             , dim_produtos.sk_produtos
-            , dim_localizacao.sk_localização 
+            , dim_localizacao.sk_localizacao
             , fact_ordem_servico_detalhes.id_ordem_servico 
             , fact_ordem_servico_detalhes.id_produto 
             , fact_ordem_servico_detalhes.id_localizacao 
@@ -34,15 +34,15 @@ with
             , fact_ordem_servico_detalhes.data_planejada_inicio_fabricacao
             , fact_ordem_servico_detalhes.data_planejada_fim_fabricacao
             , fact_ordem_servico_detalhes.data_inicio_real
-            , ffact_ordem_servico_detalhes.data_fim_real
+            , fact_ordem_servico_detalhes.data_fim_real
             , fact_ordem_servico_detalhes.data_modificacao
         from fact_ordem_servico_detalhes
-        left join {{ ref('fact_order_servico') }}
-            on fact_ordem_servico_detalhes.id_ordem_servico = fact_order_servico.id_ordem_servico    
+        left join {{ ref('fact_ordens_servicos') }}
+            on fact_ordem_servico_detalhes.id_ordem_servico = fact_ordens_servicos.id_ordem_servico
         left join {{ ref('dim_produtos') }} 
             on fact_ordem_servico_detalhes.id_produto = dim_produtos.id_produto
         left join {{ ref('dim_localizacao') }}     
-            on fact_ordem_servico_detalhes.id_localizacao = dim_localizacao.id_localização
+            on fact_ordem_servico_detalhes.id_localizacao = dim_localizacao.id_localizacao
     )
 select *
-from fact_fabricacao_detalhes_with_sk
+from fact_ordem_servico_detalhes_with_sk

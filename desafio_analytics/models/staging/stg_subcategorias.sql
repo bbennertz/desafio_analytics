@@ -10,8 +10,9 @@ with
             , "productcategoryid" id_categoria_produto
             , "name" as nome
             , "rowguid" as guia_linha
-            , "modifieddate" as data_modificacao
+            , cast(modifieddate as date) as data_modificacao
         from source
     )
 
-select * from transformed
+select * 
+from transformed

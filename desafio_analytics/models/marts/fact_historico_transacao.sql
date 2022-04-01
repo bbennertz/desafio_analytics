@@ -17,9 +17,9 @@ with
     , fact_historico_transacao_with_sk as (
         select
             {{ 
-                dbt_utils.surrogate_key(['id_transacao', 'data_modificacao']) 
+                dbt_utils.surrogate_key(['id_transacao', 'fact_historico_transacao.data_modificacao']) 
             }} as sk_historico_transacao  
-            , dim_produtos.sk_produto
+            , dim_produtos.sk_produtos
             , fact_historico_transacao.id_transacao 
             , fact_historico_transacao.id_produto
             , fact_historico_transacao.data_transacao

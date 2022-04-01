@@ -1,6 +1,6 @@
 version: 2
 models:
-  - name: dim_sucateado
+  - name: dim_sucateamento
     description: "Esta é a tabela de dimensão sobre o sucateamento."
     columns:
       - name: sk_sucateamento
